@@ -1,12 +1,30 @@
 const containerCardPokemon = document.querySelector('[data-pokemon-card="pokemon-card"]')
 
+const convertJsonInHtml = pokemons => {
+    
+
+    pokemons.map(informationsPokemon => {
+
+        const urlImagesPokemon = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${informationsPokemon.id}.png`
+
+        containerCardPokemon.innerHTML += `
+
+            <div class="card-pokemon">
+                <div class="container-image">
+                    <img src="${urlImagesPokemon}" alt="image-of-pokemon">
+                </div>
+                <span class="topics-informations-pokemon">Name: ${informationsPokemon.name}</span>
+                <span class="topics-informations-pokemon"> Base_Experience: ${informationsPokemon.base_experience}</span>
+                <span class="topics-informations-pokemon">Weight: ${informationsPokemon.weight}</span>
+            </div>
+        `
+    })
+}
+
 const requestPokemonAPI = () => {
 
     const getUrlPokemons = id => `https://pokeapi.co/api/v2/pokemon/${id}`
 
-    const getImagesPokemons = index => `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index}.png`
-
-    const pokemonImageArrayPromises = []
 
     const pokemonArrayPromises = []
 
@@ -14,39 +32,10 @@ const requestPokemonAPI = () => {
 
         pokemonArrayPromises.push(fetch(getUrlPokemons(i))
             .then(response => response.json()))
-        
     }
-
-    for(let i = 1; i <=150; i++){
-        pokemonImageArrayPromises.push(fetch(getImagesPokemons(i)
-            .then(response => response.json())))
-    }
-
-    
 
     Promise.all(pokemonArrayPromises)
-        .then((pokemons) => {
-            console.log(pokemons)
-
-            pokemons.map(informationsPokemon => {
-
-                containerCardPokemon.innerHTML += `
-
-                    <div class="card-pokemon">
-                        <div class="container-image">
-                            <img src="" alt="image-of-pokemon">
-                        </div>
-                        <span class="topics-informations-pokemon">${informationsPokemon.name}</span>
-                        <span class="topics-informations-pokemon">${informationsPokemon.base_experience}</span>
-                        <span class="topics-informations-pokemon">${informationsPokemon.weight}</span>
-                    
-                    </div>
-
-                
-                `
-            })
-        })
-
+        .then(convertJsonInHtml)
 }
 
 requestPokemonAPI()

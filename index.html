@@ -5,14 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex-API</title>
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/addPokemonForm.css">
 </head>
 <body>
+    <!-- Header -->
+    <header class="header flex-header">
+        <a href="#" class="logo"><img src="icons/icons8-troféu-40.png" alt="Pokedex-img"></a>
 
+        <nav class="nav-list">
+            <input type="search" name="inputSearch" id="input-search">
+            <button class="btn-add-pokemon" data-add-pokemon="pokemon">Cadastrar Pokemon</button>
+        </nav>
+    </header>
+
+    <section class="add-pokemon-form" data-container-form="form">
+        <form class="form" data-form="form">
+            <h1>Cadastro de Pokemon</h1>
+            <label for="input-name-pokemon">Nome do Pokemon</label>
+            <input type="text" name="input-name-pokemon" id="name-of-pokemon">
+        </form>
+    </section>
+
+    <!-- Container-API -->
     <section class="container-cards-pokemon" data-pokemon-card="pokemon-card"></section>
 
+    <!-- Script-of-Pages -->
     <script src="javascript/requestPokemons.js"></script>
+    <script src="javascript/addPokemons.js"></script>
 </body>
 </html>
