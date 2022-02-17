@@ -22,13 +22,24 @@
         </nav>
     </header>
 
-    <section class="add-pokemon-form" data-container-form="form">
-        <form class="form" data-form="form">
-            <h1>Cadastro de Pokemon</h1>
-            <label for="input-name-pokemon">Nome do Pokemon</label>
-            <input type="text" name="input-name-pokemon" id="name-of-pokemon">
-        </form>
-    </section>
+    <main>
+        <section class="add-pokemon-form" data-container-form="form">
+            <form class="form" data-form="form">
+                <h1>Cadastro de Pokemon</h1>
+
+                <label for="input-name-pokemon">Nome do Pokemon</label>
+                <input type="text" name="input-name-pokemon" id="name-of-pokemon">
+
+                <label for="input-base-experience">Experiência Base</label>
+                <input type="text" name="input-base-experience" id="base-experience">
+
+                <label for="weight-pokemon">Peso do Pokémon</label>
+                <input type="text" name="weight-pokemon" id="input-weight-pokemon">
+
+                <button type="submit" data-btn-form="btnForm">Adicionar Pokemon</button>
+            </form>
+        </section>
+    </main>
 
     <!-- Container-API -->
     <section class="container-cards-pokemon" data-pokemon-card="pokemon-card"></section>
