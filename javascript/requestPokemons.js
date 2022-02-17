@@ -6,8 +6,14 @@ const convertJsonInHtml = pokemons => {
     
 
     pokemons.map(informationsPokemon => {
+        
+        console.log(informationsPokemon)
 
         const urlImagesPokemon = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${informationsPokemon.id}.png`
+
+        const typesArrayPokemon = informationsPokemon.types.map(typePokemon => {
+            return typePokemon.type.name
+        })
 
         containerCardPokemon.innerHTML += `
 
@@ -18,6 +24,7 @@ const convertJsonInHtml = pokemons => {
                 <span class="topics-informations-pokemon">Name: ${informationsPokemon.name}</span>
                 <span class="topics-informations-pokemon"> Base_Experience: ${informationsPokemon.base_experience}</span>
                 <span class="topics-informations-pokemon">Weight: ${informationsPokemon.weight}</span>
+                <span class="topics-informations-pokemon">Type: ${typesArrayPokemon}</span>
             </div>
         `
     })
