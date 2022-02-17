@@ -1,5 +1,7 @@
 const containerCardPokemon = document.querySelector('[data-pokemon-card="pokemon-card"]')
 
+const getUrlPokemons = id => `https://pokeapi.co/api/v2/pokemon/${id}`
+
 const convertJsonInHtml = pokemons => {
     
 
@@ -21,10 +23,8 @@ const convertJsonInHtml = pokemons => {
     })
 }
 
+
 const requestPokemonAPI = () => {
-
-    const getUrlPokemons = id => `https://pokeapi.co/api/v2/pokemon/${id}`
-
 
     const pokemonArrayPromises = []
 

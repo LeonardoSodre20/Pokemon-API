@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/addPokemonForm.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 </head>
 <body>
     <!-- Header -->
     <header class="header flex-header">
-        <a href="#" class="logo"><img src="icons/icons8-troféu-40.png" alt="Pokedex-img"></a>
+        <a href="#" class="logo">LOGO</a>
 
         <nav class="nav-list">
             <input type="search" name="inputSearch" id="input-search">
@@ -22,32 +23,15 @@
         </nav>
     </header>
 
-    <!--Formulário para Cadastro de Novos Pokemons-->
-        <section class="add-pokemon-form" data-container-form="form">
-            <form class="form" data-form="form">
-                <h1>Cadastro de Pokemon</h1>
-
-                <label for="input-name-pokemon">Nome do Pokemon</label>
-                <input type="text" name="input-name-pokemon" id="name-of-pokemon">
-
-                <label for="input-base-experience">Experiência Base</label>
-                <input type="text" name="input-base-experience" id="base-experience">
-
-                <label for="weight-pokemon">Peso do Pokémon</label>
-                <input type="text" name="weight-pokemon" id="input-weight-pokemon">
-
-                <button type="submit" data-btn-form="btnForm">Adicionar Pokemon</button>
-            </form>
-        </section>
-
     <!-- Container-API -->
     <section class="container-cards-pokemon" data-pokemon-card="pokemon-card"></section>
 
-    <!--Container of Add Pokemons-->
-    <section class="container-add-pokemon" data-pokemon-add="pokemon"></section>
-
-    <!-- Script-of-Pages -->
+    <!-- Script-of-Page -->
     <script src="javascript/requestPokemons.js"></script>
-    <script src="javascript/addPokemons.js"></script>
+
+    <footer class="footer flex-footer">
+        <div class="container-icon"><img src="icons/icons8-copyright-40.png" alt="icon-copyright"></div>
+        <p>Desenvolvido por <a href="https://github.com/LeonardoSodre20" class="link-github" target="_blank">Leonardo Vieira Sodré</a></p>
+    </footer>
 </body>
 </html>
