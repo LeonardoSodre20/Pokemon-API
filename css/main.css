@@ -39,8 +39,10 @@
 }
 
 .topics-informations-pokemon{
+    color: #753Bf5;
     border: 2px solid transparent;
-    font-weight: bolder;
+    font-weight: 500;
+    font-size: 1.4em;
     margin-top: 15px;
     border-radius: 15px;
     text-indent: 10px;
@@ -49,10 +51,12 @@
     padding: 5px;
     text-transform: uppercase;
     transition: 0.5s;
-     font-family: sans-serif;
+    font-family: 'Anton', sans-serif;
 }
 
 .topics-informations-pokemon:hover{
     cursor: pointer;
     background-color: #753BF5;
+    color: #F5E83B;
 }
+

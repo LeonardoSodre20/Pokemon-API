@@ -13,7 +13,10 @@ const convertJsonInHtml = pokemons => {
 
         const typesArrayPokemon = informationsPokemon.types.map(typePokemon => {
             return typePokemon.type.name
+
+            console.log(typePokemon.type.name)
         })
+
 
         containerCardPokemon.innerHTML += `
 
