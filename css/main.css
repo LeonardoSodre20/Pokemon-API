@@ -9,7 +9,7 @@
 
 .card-pokemon{
     background-color: white;
-    border: 6px solid rgb(250, 250, 127);
+    border: 6px solid #F5E83B;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -22,29 +22,34 @@
 }
 
 .container-image{
-    height: 200px;
-    width: 200px;
-    background-color: rgb(250, 250, 127);
-    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    background-color: #F5E83B;
+    border-radius: 30%;
     box-shadow: 5px 5px 10px black;
     padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container-image img{
-    width: 100%;
+    width: 90%;
+    object-fit: cover;
 }
 
 .topics-informations-pokemon{
     border: 2px solid transparent;
-    font-weight: bold;
+    font-weight: bolder;
     margin-top: 15px;
     border-radius: 15px;
     text-indent: 10px;
-    background-color: rgb(250, 250, 127);
+    background-color: #F5E83B;
     width: 100%;
     padding: 5px;
     text-transform: uppercase;
     transition: 0.5s;
+     font-family: sans-serif;
 }
 
 .topics-informations-pokemon:hover{

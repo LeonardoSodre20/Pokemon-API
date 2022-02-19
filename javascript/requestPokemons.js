@@ -9,7 +9,7 @@ const convertJsonInHtml = pokemons => {
         
         console.log(informationsPokemon)
 
-        const urlImagesPokemon = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${informationsPokemon.id}.png`
+        const urlImagesPokemon = `https://cdn.traction.one/pokedex/pokemon/${informationsPokemon.id}.png`
 
         const typesArrayPokemon = informationsPokemon.types.map(typePokemon => {
             return typePokemon.type.name
