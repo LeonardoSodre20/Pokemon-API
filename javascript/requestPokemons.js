@@ -1,4 +1,6 @@
 const containerCardPokemon = document.querySelector('[data-pokemon-card="pokemon-card"]')
+const inputSearchPokemon = document.querySelector('#input-search')
+
 
 const getUrlPokemons = id => `https://pokeapi.co/api/v2/pokemon/${id}`
 
@@ -6,9 +8,7 @@ const convertJsonInHtml = pokemons => {
     
 
     pokemons.map(informationsPokemon => {
-        
-        console.log(informationsPokemon)
-
+    
         const urlImagesPokemon = `https://cdn.traction.one/pokedex/pokemon/${informationsPokemon.id}.png`
 
         const typesArrayPokemon = informationsPokemon.types.map(typePokemon => {
@@ -17,10 +17,9 @@ const convertJsonInHtml = pokemons => {
             console.log(typePokemon.type.name)
         })
 
-
         containerCardPokemon.innerHTML += `
 
-            <div class="card-pokemon">
+            <div class="card-pokemon" data-card-pokemon="card">
                 <div class="container-image">
                     <img src="${urlImagesPokemon}" alt="image-of-pokemon">
                 </div>
@@ -30,8 +29,19 @@ const convertJsonInHtml = pokemons => {
                 <span class="topics-informations-pokemon">Type: ${typesArrayPokemon}</span>
             </div>
         `
+
+        const containerPokemon = document.querySelector('.card-pokemon')
+        console.log(Array.from(containerPokemon.children))
+
+        inputSearchPokemon.addEventListener('input', event => {
+            const inputValue = event.target.value.trim()
+            console.log(inputValue)
+            
+        })
     })
 }
+
+
 
 
 const requestPokemonAPI = () => {
@@ -41,11 +51,14 @@ const requestPokemonAPI = () => {
     for(let i = 1; i <= 150; i++){
 
         pokemonArrayPromises.push(fetch(getUrlPokemons(i))
-            .then(response => response.json()))
-    }
+             .then(response => response.json()))
+     }
 
     Promise.all(pokemonArrayPromises)
         .then(convertJsonInHtml)
 }
 
 requestPokemonAPI()
+
+
+
