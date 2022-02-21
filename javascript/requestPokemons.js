@@ -29,15 +29,6 @@ const convertJsonInHtml = pokemons => {
                 <span class="topics-informations-pokemon">Type: ${typesArrayPokemon}</span>
             </div>
         `
-
-        const containerPokemon = document.querySelector('.card-pokemon')
-        console.log(Array.from(containerPokemon.children))
-
-        inputSearchPokemon.addEventListener('input', event => {
-            const inputValue = event.target.value.trim()
-            console.log(inputValue)
-            
-        })
     })
 }
 
