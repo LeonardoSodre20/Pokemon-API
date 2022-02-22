@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
 </head>
@@ -17,22 +18,30 @@
     <header class="header flex-header">
         <h1>Pokedex API</h1>
 
-        <input type="search" name="inputSearch" id="input-search" autofocus placeholder="Pesquise algum pokemon...">
+        <nav class="nav-bar">
+            <ul class="nav-list" data-mobile-list="mobile">
+                <li><input type="search" name="inputSearch" id="input-search" autofocus placeholder="Pesquise algum pokemon..."></li>
+                <li><img src="icons/icons8-search-40.png" alt="icon-search"></li>
+            </ul>
+
+            <div class="container-icon" data-menu-mobile="mobile"><img src="icons/icons8-cardápio-40.png" alt="icon-menu"></div>
+        </nav>
+        
     </header>
 
     <!-- Container-API -->
     <section class="container-cards-pokemon" data-pokemon-card="pokemon-card"></section>
 
-    <!-- Script-of-Page -->
-    <script src="javascript/requestPokemons.js"></script>
-
-    
+ 
 
     <footer class="footer flex-footer">
         <div class="container-icon"><img src="icons/icons8-copyright-40.png" alt="icon-copyright"></div>
         <p>Desenvolvido por <a href="https://github.com/LeonardoSodre20" class="link-github" target="_blank">Leonardo Vieira Sodré</a></p>
     </footer>
 
-   
+      <!-- Script-of-Page -->
+    <script src="javascript/requestPokemons.js"></script>
+    <script src="javascript/menuMobile.js"></script>
+    
 </body>
 </html>
